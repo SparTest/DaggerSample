@@ -3,6 +3,7 @@ package dagger.examples.com.daggersample.presentation.views;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -114,8 +115,9 @@ public class ReposActivity extends AppCompatActivity implements IGithubView {
     }
 
     private void configList() {
-        this.list.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        this.list.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         this.list.setHasFixedSize(false);
         this.list.setAdapter(this.adapter);
+        this.list.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 }

@@ -107,6 +107,8 @@ public class UserActivity extends AppCompatActivity implements ILoginView {
 
         i.putExtra("user", this.getUserName());
 
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         this.startActivity(i);
     }
 }
