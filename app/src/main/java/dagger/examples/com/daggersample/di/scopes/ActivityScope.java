@@ -10,5 +10,6 @@ import javax.inject.Scope;
  * Custom scope
  */
 @Scope
+@Retention(RetentionPolicy.RUNTIME)
 public @interface ActivityScope {
 }
