@@ -1,6 +1,5 @@
 package dagger.examples.com.daggersample.presentation.views;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -24,7 +23,7 @@ import dagger.examples.com.daggersample.presentation.views.interfaces.ILoginView
 public class UserActivity extends AppCompatActivity implements ILoginView {
 
     private ScrollView formContainer;
-    private EditText email;
+    private EditText txtUser;
 
     @Inject
     protected UserPresenter presenter;
@@ -71,16 +70,20 @@ public class UserActivity extends AppCompatActivity implements ILoginView {
 
     private void bindViews() {
         this.formContainer = (ScrollView) this.findViewById(R.id.login_form_container);
-        this.email = (EditText) this.findViewById(R.id.email);
+        this.txtUser = (EditText) this.findViewById(R.id.email);
     }
 
     public void onLoginClick(View v) {
-        this.presenter.validateUserName(this.getUserName());
+        if (this.getUserName().length() > 0) {
+            this.presenter.validateUserName(this.getUserName());
+        } else {
+            this.txtUser.setError(getString(R.string.error_field_required));
+        }
     }
 
     @Override
     public String getUserName() {
-        return (this.email != null)? this.email.getText().toString() : "";
+        return (this.txtUser != null)? this.txtUser.getText().toString() : "";
     }
 
     @Override
