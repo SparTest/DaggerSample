@@ -47,7 +47,7 @@ public class AppModule {
      */
     @Provides
     @Singleton
-    public EventBus provideBus() {
+    public EventBus getBus() {
         return EventBus.getDefault();
     }
 

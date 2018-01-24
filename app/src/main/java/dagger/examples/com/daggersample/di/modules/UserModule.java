@@ -20,12 +20,12 @@ public class UserModule {
      * @return Login presenter
      */
     @Provides
-    public UserPresenter providePresenter() {
+    public UserPresenter getPresenter() {
         return new UserPresenter();
     }
 
     @Provides
-    public UserInteractor provideInteractor(EventBus bus) {
+    public UserInteractor getInteractor(EventBus bus) {
         return new UserInteractor(bus);
     }
 }
