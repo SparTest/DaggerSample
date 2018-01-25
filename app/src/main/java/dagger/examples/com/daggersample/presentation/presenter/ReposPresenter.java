@@ -61,6 +61,7 @@ public class ReposPresenter {
         this.view.setData(event.getRepos());
     }
 
+    @Subscribe
     public void onErrorEvent(ErrorEvent event) {
         this.view.setData(null);
     }

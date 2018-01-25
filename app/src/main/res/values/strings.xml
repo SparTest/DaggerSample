@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Github</string>
+    <string name="app_name">Github Repos</string>
 
     <string name="prompt_user">Github user</string>
     <string name="prompt_password">Password (optional)</string>
